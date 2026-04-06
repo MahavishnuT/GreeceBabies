@@ -7,7 +7,8 @@
     "destinations": "Προορισμοί",
     "hotels": "Ξενοδοχεία",
     "activities": "Δραστηριότητες",
-    "planning": "Σχεδιασμός"
+    "planning": "Σχεδιασμός",
+    "itinerary": "Δρομολόγιο"
   },
   "common": {
     "add": "Προσθήκη",
@@ -16,7 +17,8 @@
     "addedBy": "Προστέθηκε από {{name}}",
     "yourName": "Το όνομά σου",
     "select": "-- Επιλογή --",
-    "destination": "Προορισμός"
+    "destination": "Προορισμός",
+    "destinationPlaceholder": "π.χ. Σαντορίνη, Αθήνα..."
   },
   "destinations": {
     "title": "Προορισμοί",
@@ -76,5 +78,19 @@
     "notePlaceholder": "Γράψε μια σημείωση...",
     "noNotes": "Καμία σημείωση ακόμα"
   },
-  "footer": "Greece Babies 2026 — Καλό ταξίδι! 🏖️"
+  "footer": "Greece Babies 2026 — Καλό ταξίδι! 🏖️",
+  "itinerary": {
+    "title": "Δρομολόγιο",
+    "minVotesInfo": "Μόνο στοιχεία με τουλάχιστον {{count}} ψήφους εμφανίζονται εδώ.",
+    "approvedDestinations": "εγκεκριμένος(-οι) προορισμός(-οί)",
+    "approvedHotels": "εγκεκριμένο(-α) ξενοδοχείο(-α)",
+    "approvedActivities": "εγκεκριμένη(-ες) δραστηριότητα(-ες)",
+    "setDatesFirst": "Ορίστε πρώτα τις ημερομηνίες ταξιδιού στην καρτέλα Σχεδιασμός.",
+    "noApprovedItems": "Κανένα στοιχείο δεν έχει λάβει αρκετές ψήφους ακόμα (ελάχιστο {{count}}).",
+    "dayNumber": "Ημέρα {{day}}",
+    "destinationsLabel": "Προορισμοί",
+    "hotelsLabel": "Διαμονή",
+    "activitiesLabel": "Δραστηριότητες",
+    "freeDay": "Ελεύθερη μέρα — τίποτα προγραμματισμένο"
+  }
 }

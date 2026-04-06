@@ -7,7 +7,8 @@
     "destinations": "Destinations",
     "hotels": "Hôtels",
     "activities": "Activités",
-    "planning": "Planning"
+    "planning": "Planning",
+    "itinerary": "Trajet"
   },
   "common": {
     "add": "Ajouter",
@@ -16,7 +17,8 @@
     "addedBy": "Ajouté par {{name}}",
     "yourName": "Ton prénom",
     "select": "-- Sélectionner --",
-    "destination": "Destination"
+    "destination": "Destination",
+    "destinationPlaceholder": "Ex: Santorin, Athènes..."
   },
   "destinations": {
     "title": "Destinations",
@@ -76,5 +78,19 @@
     "notePlaceholder": "Écris une note...",
     "noNotes": "Aucune note pour le moment"
   },
-  "footer": "Greece Babies 2026 — Bon voyage ! 🏖️"
+  "footer": "Greece Babies 2026 — Bon voyage ! 🏖️",
+  "itinerary": {
+    "title": "Trajet",
+    "minVotesInfo": "Seuls les éléments avec au moins {{count}} votes apparaissent ici.",
+    "approvedDestinations": "destination(s) validée(s)",
+    "approvedHotels": "hôtel(s) validé(s)",
+    "approvedActivities": "activité(s) validée(s)",
+    "setDatesFirst": "Définissez d'abord les dates du voyage dans l'onglet Planning.",
+    "noApprovedItems": "Aucun élément n'a encore reçu assez de votes (minimum {{count}}).",
+    "dayNumber": "Jour {{day}}",
+    "destinationsLabel": "Destinations",
+    "hotelsLabel": "Hébergement",
+    "activitiesLabel": "Activités",
+    "freeDay": "Journée libre — rien de prévu"
+  }
 }

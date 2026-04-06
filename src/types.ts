@@ -15,6 +15,7 @@ export interface Hotel {
   rating: string;
   link: string;
   notes: string;
+  votes: string[];
   addedBy: string;
   createdAt: string;
 }
@@ -25,6 +26,7 @@ export interface Activity {
   name: string;
   description: string;
   estimatedCost: string;
+  votes: string[];
   addedBy: string;
   createdAt: string;
 }
@@ -43,4 +45,9 @@ export interface TripInfo {
   participants: string[];
 }
 
-export type TabId = 'destinations' | 'hotels' | 'activities' | 'planning';
+export type TabId =
+  | 'destinations'
+  | 'hotels'
+  | 'activities'
+  | 'planning'
+  | 'itinerary';

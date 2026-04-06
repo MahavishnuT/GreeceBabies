@@ -7,7 +7,8 @@
     "destinations": "Destinations",
     "hotels": "Hotels",
     "activities": "Activities",
-    "planning": "Planning"
+    "planning": "Planning",
+    "itinerary": "Itinerary"
   },
   "common": {
     "add": "Add",
@@ -16,7 +17,8 @@
     "addedBy": "Added by {{name}}",
     "yourName": "Your name",
     "select": "-- Select --",
-    "destination": "Destination"
+    "destination": "Destination",
+    "destinationPlaceholder": "e.g. Santorini, Athens..."
   },
   "destinations": {
     "title": "Destinations",
@@ -76,5 +78,19 @@
     "notePlaceholder": "Write a note...",
     "noNotes": "No notes yet"
   },
-  "footer": "Greece Babies 2026 — Have a great trip! 🏖️"
+  "footer": "Greece Babies 2026 — Have a great trip! 🏖️",
+  "itinerary": {
+    "title": "Itinerary",
+    "minVotesInfo": "Only items with at least {{count}} votes appear here.",
+    "approvedDestinations": "approved destination(s)",
+    "approvedHotels": "approved hotel(s)",
+    "approvedActivities": "approved activity(ies)",
+    "setDatesFirst": "Set the trip dates in the Planning tab first.",
+    "noApprovedItems": "No items have received enough votes yet (minimum {{count}}).",
+    "dayNumber": "Day {{day}}",
+    "destinationsLabel": "Destinations",
+    "hotelsLabel": "Accommodation",
+    "activitiesLabel": "Activities",
+    "freeDay": "Free day — nothing planned"
+  }
 }

@@ -4,8 +4,9 @@ import Destinations from './components/Destinations';
 import Hotels from './components/Hotels';
 import Activities from './components/Activities';
 import Planning from './components/Planning';
+import Itinerary from './components/Itinerary';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import { MapPin, Building2, Compass, CalendarDays } from 'lucide-react';
+import { MapPin, Building2, Compass, CalendarDays, Route } from 'lucide-react';
 import type { TabId } from './types';
 import './App.css';
 
@@ -14,6 +15,7 @@ const tabs: { id: TabId; labelKey: string; icon: typeof MapPin }[] = [
   { id: 'hotels', labelKey: 'tabs.hotels', icon: Building2 },
   { id: 'activities', labelKey: 'tabs.activities', icon: Compass },
   { id: 'planning', labelKey: 'tabs.planning', icon: CalendarDays },
+  { id: 'itinerary', labelKey: 'tabs.itinerary', icon: Route },
 ];
 
 function App() {
@@ -50,6 +52,7 @@ function App() {
         {activeTab === 'hotels' && <Hotels />}
         {activeTab === 'activities' && <Activities />}
         {activeTab === 'planning' && <Planning />}
+        {activeTab === 'itinerary' && <Itinerary />}
       </main>
 
       <footer className="app-footer">

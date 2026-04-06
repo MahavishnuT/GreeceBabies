@@ -1,0 +1,80 @@
+{
+  "header": {
+    "title": "Greece Babies",
+    "subtitle": "Ας οργανώσουμε το ταξίδι μας στην Ελλάδα!"
+  },
+  "tabs": {
+    "destinations": "Προορισμοί",
+    "hotels": "Ξενοδοχεία",
+    "activities": "Δραστηριότητες",
+    "planning": "Σχεδιασμός"
+  },
+  "common": {
+    "add": "Προσθήκη",
+    "cancel": "Ακύρωση",
+    "delete": "Διαγραφή",
+    "addedBy": "Προστέθηκε από {{name}}",
+    "yourName": "Το όνομά σου",
+    "select": "-- Επιλογή --",
+    "destination": "Προορισμός"
+  },
+  "destinations": {
+    "title": "Προορισμοί",
+    "newDestination": "Νέος προορισμός",
+    "nameLabel": "Όνομα προορισμού *",
+    "namePlaceholder": "π.χ. Σαντορίνη, Αθήνα...",
+    "addedByLabel": "Προστέθηκε από *",
+    "descriptionLabel": "Περιγραφή",
+    "descriptionPlaceholder": "Γιατί αυτός ο προορισμός;",
+    "voterLabel": "Το όνομά σου για ψηφοφορία:",
+    "emptyState": "Κανένας προορισμός ακόμα. Προσθέστε τον πρώτο!"
+  },
+  "hotels": {
+    "title": "Ξενοδοχεία & Καταλύματα",
+    "newHotel": "Νέο ξενοδοχείο",
+    "nameLabel": "Όνομα ξενοδοχείου *",
+    "namePlaceholder": "π.χ. Hotel Athena...",
+    "priceLabel": "Τιμή / βράδυ (€)",
+    "pricePlaceholder": "π.χ. 80",
+    "ratingLabel": "Βαθμολογία (από 10)",
+    "ratingPlaceholder": "π.χ. 8.5",
+    "linkLabel": "Σύνδεσμος (Booking, Airbnb...)",
+    "linkPlaceholder": "https://...",
+    "addedByLabel": "Προστέθηκε από *",
+    "notesLabel": "Σημειώσεις",
+    "notesPlaceholder": "Επιπλέον πληροφορίες...",
+    "viewLink": "Δείτε τον σύνδεσμο",
+    "pricePerNight": "{{price}}€/βράδυ",
+    "ratingOut10": "{{rating}}/10",
+    "emptyState": "Δεν έχουν προστεθεί ξενοδοχεία. Βρείτε το τέλειο κατάλυμα!"
+  },
+  "activities": {
+    "title": "Δραστηριότητες",
+    "newActivity": "Νέα δραστηριότητα",
+    "nameLabel": "Όνομα δραστηριότητας *",
+    "namePlaceholder": "π.χ. Επίσκεψη στην Ακρόπολη...",
+    "costLabel": "Εκτιμώμενο κόστος (€)",
+    "costPlaceholder": "π.χ. 20",
+    "addedByLabel": "Προστέθηκε από *",
+    "descriptionLabel": "Περιγραφή",
+    "descriptionPlaceholder": "Λεπτομέρειες δραστηριότητας...",
+    "estimatedCost": "~{{cost}}€",
+    "emptyState": "Καμία δραστηριότητα ακόμα. Προτείνετε ιδέες!"
+  },
+  "planning": {
+    "title": "Σχεδιασμός",
+    "datesBudget": "Ημερομηνίες & Προϋπολογισμός",
+    "startDate": "Ημερομηνία αναχώρησης",
+    "endDate": "Ημερομηνία επιστροφής",
+    "budget": "Συνολικός προϋπολογισμός (€)",
+    "budgetPlaceholder": "π.χ. 2000",
+    "duration": "Διάρκεια: {{days}} ημέρες",
+    "participants": "Συμμετέχοντες",
+    "participantPlaceholder": "Όνομα",
+    "addParticipants": "Προσθέστε τους συμμετέχοντες",
+    "notesTitle": "Σημειώσεις & Ιδέες",
+    "notePlaceholder": "Γράψε μια σημείωση...",
+    "noNotes": "Καμία σημείωση ακόμα"
+  },
+  "footer": "Greece Babies 2026 — Καλό ταξίδι! 🏖️"
+}

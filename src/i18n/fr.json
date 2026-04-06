@@ -1,0 +1,80 @@
+{
+  "header": {
+    "title": "Greece Babies",
+    "subtitle": "Organisons notre voyage en Grèce !"
+  },
+  "tabs": {
+    "destinations": "Destinations",
+    "hotels": "Hôtels",
+    "activities": "Activités",
+    "planning": "Planning"
+  },
+  "common": {
+    "add": "Ajouter",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "addedBy": "Ajouté par {{name}}",
+    "yourName": "Ton prénom",
+    "select": "-- Sélectionner --",
+    "destination": "Destination"
+  },
+  "destinations": {
+    "title": "Destinations",
+    "newDestination": "Nouvelle destination",
+    "nameLabel": "Nom de la destination *",
+    "namePlaceholder": "Ex: Santorin, Athènes...",
+    "addedByLabel": "Ajouté par *",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Pourquoi cette destination ?",
+    "voterLabel": "Ton prénom pour voter :",
+    "emptyState": "Aucune destination pour le moment. Ajoutez la première !"
+  },
+  "hotels": {
+    "title": "Hôtels & Logements",
+    "newHotel": "Nouvel hôtel",
+    "nameLabel": "Nom de l'hôtel *",
+    "namePlaceholder": "Ex: Hotel Athena...",
+    "priceLabel": "Prix / nuit (€)",
+    "pricePlaceholder": "Ex: 80",
+    "ratingLabel": "Note (sur 10)",
+    "ratingPlaceholder": "Ex: 8.5",
+    "linkLabel": "Lien (Booking, Airbnb...)",
+    "linkPlaceholder": "https://...",
+    "addedByLabel": "Ajouté par *",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Infos supplémentaires...",
+    "viewLink": "Voir le lien",
+    "pricePerNight": "{{price}}€/nuit",
+    "ratingOut10": "{{rating}}/10",
+    "emptyState": "Aucun hôtel ajouté. Trouvez le logement parfait !"
+  },
+  "activities": {
+    "title": "Activités",
+    "newActivity": "Nouvelle activité",
+    "nameLabel": "Nom de l'activité *",
+    "namePlaceholder": "Ex: Visite de l'Acropole...",
+    "costLabel": "Coût estimé (€)",
+    "costPlaceholder": "Ex: 20",
+    "addedByLabel": "Ajouté par *",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Détails sur l'activité...",
+    "estimatedCost": "~{{cost}}€",
+    "emptyState": "Aucune activité prévue. Proposez des idées !"
+  },
+  "planning": {
+    "title": "Planification",
+    "datesBudget": "Dates & Budget",
+    "startDate": "Date de départ",
+    "endDate": "Date de retour",
+    "budget": "Budget total (€)",
+    "budgetPlaceholder": "Ex: 2000",
+    "duration": "Durée : {{days}} jours",
+    "participants": "Participants",
+    "participantPlaceholder": "Prénom",
+    "addParticipants": "Ajoutez les participants du voyage",
+    "notesTitle": "Notes & Idées",
+    "notePlaceholder": "Écris une note...",
+    "noNotes": "Aucune note pour le moment"
+  },
+  "footer": "Greece Babies 2026 — Bon voyage ! 🏖️"
+}

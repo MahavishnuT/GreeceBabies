@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Destination, TripInfo } from '../types';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useSharedStorage } from '../hooks/useSharedStorage';
 import { MapPin, Plus, ThumbsUp, Trash2 } from 'lucide-react';
 
 export default function Destinations() {
   const { t } = useTranslation();
-  const [destinations, setDestinations] = useLocalStorage<Destination[]>(
+  const [destinations, setDestinations] = useSharedStorage<Destination[]>(
     'gb-destinations',
     [],
   );
@@ -15,7 +15,7 @@ export default function Destinations() {
   const [description, setDescription] = useState('');
   const [addedBy, setAddedBy] = useState('');
   const [voterName, setVoterName] = useState('');
-  const [tripInfo] = useLocalStorage<TripInfo>('gb-trip-info', {
+  const [tripInfo] = useSharedStorage<TripInfo>('gb-trip-info', {
     startDate: '',
     endDate: '',
     budget: '',

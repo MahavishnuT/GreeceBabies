@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Hotel, TripInfo } from '../types';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useSharedStorage } from '../hooks/useSharedStorage';
 import { Building2, Plus, Trash2, ExternalLink, ThumbsUp } from 'lucide-react';
 
 export default function Hotels() {
   const { t } = useTranslation();
-  const [hotels, setHotels] = useLocalStorage<Hotel[]>('gb-hotels', []);
+  const [hotels, setHotels] = useSharedStorage<Hotel[]>('gb-hotels', []);
   const [showForm, setShowForm] = useState(false);
   const [destination, setDestination] = useState('');
   const [name, setName] = useState('');
@@ -17,7 +17,7 @@ export default function Hotels() {
   const [date, setDate] = useState('');
   const [addedBy, setAddedBy] = useState('');
   const [voterName, setVoterName] = useState('');
-  const [tripInfo] = useLocalStorage<TripInfo>('gb-trip-info', {
+  const [tripInfo] = useSharedStorage<TripInfo>('gb-trip-info', {
     startDate: '',
     endDate: '',
     budget: '',

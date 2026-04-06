@@ -1,21 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import type { Destination, Hotel, Activity, TripInfo } from '../types';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useSharedStorage } from '../hooks/useSharedStorage';
 import { Route, MapPin, Building2, Compass, AlertCircle } from 'lucide-react';
 
 const MIN_VOTES = 6;
 
 export default function Itinerary() {
   const { t } = useTranslation();
-  const [tripInfo] = useLocalStorage<TripInfo>('gb-trip-info', {
+  const [tripInfo] = useSharedStorage<TripInfo>('gb-trip-info', {
     startDate: '',
     endDate: '',
     budget: '',
     participants: [],
   });
-  const [destinations] = useLocalStorage<Destination[]>('gb-destinations', []);
-  const [hotels] = useLocalStorage<Hotel[]>('gb-hotels', []);
-  const [activities] = useLocalStorage<Activity[]>('gb-activities', []);
+  const [destinations] = useSharedStorage<Destination[]>('gb-destinations', []);
+  const [hotels] = useSharedStorage<Hotel[]>('gb-hotels', []);
+  const [activities] = useSharedStorage<Activity[]>('gb-activities', []);
 
   const approvedDestinations = destinations.filter(
     (d) => d.votes.length >= MIN_VOTES,

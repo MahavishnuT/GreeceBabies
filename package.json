@@ -7,10 +7,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:ghpages": "GITHUB_PAGES=true tsc -b && GITHUB_PAGES=true vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build:ghpages",
+    "deploy": "gh-pages -d dist",
+    "server": "npm run build && cd server && npm start"
   },
   "dependencies": {
     "i18next": "^26.0.3",

@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TripInfo, TripNote } from '../types';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useSharedStorage } from '../hooks/useSharedStorage';
 import { CalendarDays, Plus, Trash2, UserPlus, StickyNote } from 'lucide-react';
 
 export default function Planning() {
   const { t, i18n } = useTranslation();
-  const [tripInfo, setTripInfo] = useLocalStorage<TripInfo>('gb-trip-info', {
+  const [tripInfo, setTripInfo] = useSharedStorage<TripInfo>('gb-trip-info', {
     startDate: '',
     endDate: '',
     budget: '',
     participants: [],
   });
-  const [notes, setNotes] = useLocalStorage<TripNote[]>('gb-notes', []);
+  const [notes, setNotes] = useSharedStorage<TripNote[]>('gb-notes', []);
   const [newParticipant, setNewParticipant] = useState('');
   const [newNote, setNewNote] = useState('');
   const [noteAuthor, setNoteAuthor] = useState('');

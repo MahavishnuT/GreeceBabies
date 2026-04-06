@@ -18,7 +18,8 @@
     "yourName": "Your name",
     "select": "-- Select --",
     "destination": "Destination",
-    "destinationPlaceholder": "e.g. Santorini, Athens..."
+    "destinationPlaceholder": "e.g. Santorini, Athens...",
+    "dateLabel": "Date"
   },
   "destinations": {
     "title": "Destinations",

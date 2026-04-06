@@ -18,7 +18,8 @@
     "yourName": "Το όνομά σου",
     "select": "-- Επιλογή --",
     "destination": "Προορισμός",
-    "destinationPlaceholder": "π.χ. Σαντορίνη, Αθήνα..."
+    "destinationPlaceholder": "π.χ. Σαντορίνη, Αθήνα...",
+    "dateLabel": "Ημερομηνία"
   },
   "destinations": {
     "title": "Προορισμοί",

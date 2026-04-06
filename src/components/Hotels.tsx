@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { Hotel } from '../types';
+import type { Hotel, TripInfo } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { Building2, Plus, Trash2, ExternalLink, ThumbsUp } from 'lucide-react';
 
@@ -14,8 +14,16 @@ export default function Hotels() {
   const [rating, setRating] = useState('');
   const [link, setLink] = useState('');
   const [notes, setNotes] = useState('');
+  const [date, setDate] = useState('');
   const [addedBy, setAddedBy] = useState('');
   const [voterName, setVoterName] = useState('');
+  const [tripInfo] = useLocalStorage<TripInfo>('gb-trip-info', {
+    startDate: '',
+    endDate: '',
+    budget: '',
+    participants: [],
+  });
+  const participants = tripInfo.participants;
 
   const handleAdd = () => {
     if (!name.trim() || !addedBy.trim()) return;
@@ -23,6 +31,7 @@ export default function Hotels() {
       id: crypto.randomUUID(),
       destination: destination.trim(),
       name: name.trim(),
+      date,
       pricePerNight: pricePerNight.trim(),
       rating: rating.trim(),
       link: link.trim(),
@@ -34,6 +43,7 @@ export default function Hotels() {
     setHotels((prev) => [...prev, newHotel]);
     setName('');
     setDestination('');
+    setDate('');
     setPricePerNight('');
     setRating('');
     setLink('');
@@ -94,6 +104,14 @@ export default function Hotels() {
               />
             </div>
             <div className="form-group">
+              <label>{t('common.dateLabel')}</label>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
               <label>{t('hotels.priceLabel')}</label>
               <input
                 value={pricePerNight}
@@ -119,11 +137,12 @@ export default function Hotels() {
             </div>
             <div className="form-group">
               <label>{t('hotels.addedByLabel')}</label>
-              <input
-                value={addedBy}
-                onChange={(e) => setAddedBy(e.target.value)}
-                placeholder={t('common.yourName')}
-              />
+              <select value={addedBy} onChange={(e) => setAddedBy(e.target.value)}>
+                <option value="">{t('common.select')}</option>
+                {participants.map((p) => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
+              </select>
             </div>
             <div className="form-group full-width">
               <label>{t('hotels.notesLabel')}</label>
@@ -158,12 +177,16 @@ export default function Hotels() {
         <>
           <div className="voter-bar">
             <label>{t('destinations.voterLabel')}</label>
-            <input
+            <select
               value={voterName}
               onChange={(e) => setVoterName(e.target.value)}
-              placeholder={t('common.yourName')}
               className="voter-input"
-            />
+            >
+              <option value="">{t('common.select')}</option>
+              {participants.map((p) => (
+                <option key={p} value={p}>{p}</option>
+              ))}
+            </select>
           </div>
           <div className="cards-grid">
             {hotels.map((hotel) => (
@@ -179,6 +202,11 @@ export default function Hotels() {
                   </button>
                 </div>
                 <div className="card-details">
+                  {hotel.date && (
+                    <span className="detail-tag">
+                      📅 {new Date(hotel.date).toLocaleDateString()}
+                    </span>
+                  )}
                   {hotel.destination && (
                     <span className="detail-tag">📍 {hotel.destination}</span>
                   )}

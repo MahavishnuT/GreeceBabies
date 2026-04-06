@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { Destination } from '../types';
+import type { Destination, TripInfo } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { MapPin, Plus, ThumbsUp, Trash2 } from 'lucide-react';
 
@@ -15,6 +15,13 @@ export default function Destinations() {
   const [description, setDescription] = useState('');
   const [addedBy, setAddedBy] = useState('');
   const [voterName, setVoterName] = useState('');
+  const [tripInfo] = useLocalStorage<TripInfo>('gb-trip-info', {
+    startDate: '',
+    endDate: '',
+    budget: '',
+    participants: [],
+  });
+  const participants = tripInfo.participants;
 
   const handleAdd = () => {
     if (!name.trim() || !addedBy.trim()) return;
@@ -77,11 +84,12 @@ export default function Destinations() {
             </div>
             <div className="form-group">
               <label>{t('destinations.addedByLabel')}</label>
-              <input
-                value={addedBy}
-                onChange={(e) => setAddedBy(e.target.value)}
-                placeholder={t('common.yourName')}
-              />
+              <select value={addedBy} onChange={(e) => setAddedBy(e.target.value)}>
+                <option value="">{t('common.select')}</option>
+                {participants.map((p) => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
+              </select>
             </div>
             <div className="form-group full-width">
               <label>{t('destinations.descriptionLabel')}</label>
@@ -109,12 +117,16 @@ export default function Destinations() {
 
       <div className="voter-bar">
         <label>{t('destinations.voterLabel')}</label>
-        <input
+        <select
           value={voterName}
           onChange={(e) => setVoterName(e.target.value)}
-          placeholder={t('common.yourName')}
           className="voter-input"
-        />
+        >
+          <option value="">{t('common.select')}</option>
+          {participants.map((p) => (
+            <option key={p} value={p}>{p}</option>
+          ))}
+        </select>
       </div>
 
       {destinations.length === 0 ? (

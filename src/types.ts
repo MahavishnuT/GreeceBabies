@@ -11,6 +11,7 @@ export interface Hotel {
   id: string;
   destination: string;
   name: string;
+  date: string;
   pricePerNight: string;
   rating: string;
   link: string;
@@ -24,6 +25,7 @@ export interface Activity {
   id: string;
   destination: string;
   name: string;
+  date: string;
   description: string;
   estimatedCost: string;
   votes: string[];

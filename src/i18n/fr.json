@@ -18,7 +18,8 @@
     "yourName": "Ton prénom",
     "select": "-- Sélectionner --",
     "destination": "Destination",
-    "destinationPlaceholder": "Ex: Santorin, Athènes..."
+    "destinationPlaceholder": "Ex: Santorin, Athènes...",
+    "dateLabel": "Date"
   },
   "destinations": {
     "title": "Destinations",

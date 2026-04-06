@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { Activity } from '../types';
+import type { Activity, TripInfo } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { Compass, Plus, Trash2, ThumbsUp } from 'lucide-react';
 
@@ -15,8 +15,16 @@ export default function Activities() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [estimatedCost, setEstimatedCost] = useState('');
+  const [date, setDate] = useState('');
   const [addedBy, setAddedBy] = useState('');
   const [voterName, setVoterName] = useState('');
+  const [tripInfo] = useLocalStorage<TripInfo>('gb-trip-info', {
+    startDate: '',
+    endDate: '',
+    budget: '',
+    participants: [],
+  });
+  const participants = tripInfo.participants;
 
   const handleAdd = () => {
     if (!name.trim() || !addedBy.trim()) return;
@@ -24,6 +32,7 @@ export default function Activities() {
       id: crypto.randomUUID(),
       destination: destination.trim(),
       name: name.trim(),
+      date,
       description: description.trim(),
       estimatedCost: estimatedCost.trim(),
       votes: [],
@@ -33,6 +42,7 @@ export default function Activities() {
     setActivities((prev) => [...prev, newActivity]);
     setName('');
     setDestination('');
+    setDate('');
     setDescription('');
     setEstimatedCost('');
     setShowForm(false);
@@ -91,6 +101,14 @@ export default function Activities() {
               />
             </div>
             <div className="form-group">
+              <label>{t('common.dateLabel')}</label>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
               <label>{t('activities.costLabel')}</label>
               <input
                 value={estimatedCost}
@@ -100,11 +118,12 @@ export default function Activities() {
             </div>
             <div className="form-group">
               <label>{t('activities.addedByLabel')}</label>
-              <input
-                value={addedBy}
-                onChange={(e) => setAddedBy(e.target.value)}
-                placeholder={t('common.yourName')}
-              />
+              <select value={addedBy} onChange={(e) => setAddedBy(e.target.value)}>
+                <option value="">{t('common.select')}</option>
+                {participants.map((p) => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
+              </select>
             </div>
             <div className="form-group full-width">
               <label>{t('activities.descriptionLabel')}</label>
@@ -139,12 +158,16 @@ export default function Activities() {
         <>
           <div className="voter-bar">
             <label>{t('destinations.voterLabel')}</label>
-            <input
+            <select
               value={voterName}
               onChange={(e) => setVoterName(e.target.value)}
-              placeholder={t('common.yourName')}
               className="voter-input"
-            />
+            >
+              <option value="">{t('common.select')}</option>
+              {participants.map((p) => (
+                <option key={p} value={p}>{p}</option>
+              ))}
+            </select>
           </div>
           <div className="cards-grid">
             {activities.map((activity) => (
@@ -160,6 +183,11 @@ export default function Activities() {
                   </button>
                 </div>
                 <div className="card-details">
+                  {activity.date && (
+                    <span className="detail-tag">
+                      📅 {new Date(activity.date).toLocaleDateString()}
+                    </span>
+                  )}
                   {activity.destination && (
                     <span className="detail-tag">
                       📍 {activity.destination}

@@ -118,10 +118,15 @@ export default function Activities() {
             </div>
             <div className="form-group">
               <label>{t('activities.addedByLabel')}</label>
-              <select value={addedBy} onChange={(e) => setAddedBy(e.target.value)}>
+              <select
+                value={addedBy}
+                onChange={(e) => setAddedBy(e.target.value)}
+              >
                 <option value="">{t('common.select')}</option>
                 {participants.map((p) => (
-                  <option key={p} value={p}>{p}</option>
+                  <option key={p} value={p}>
+                    {p}
+                  </option>
                 ))}
               </select>
             </div>
@@ -165,7 +170,9 @@ export default function Activities() {
             >
               <option value="">{t('common.select')}</option>
               {participants.map((p) => (
-                <option key={p} value={p}>{p}</option>
+                <option key={p} value={p}>
+                  {p}
+                </option>
               ))}
             </select>
           </div>
